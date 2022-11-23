@@ -68,17 +68,19 @@ class Patients(db.Model):
     last_name = db.Column(db.String(255))
     zip_code = db.Column(db.String(255), nullable=True)
     gender = db.Column(db.String(255), nullable=True)
+    dob = db.Column(db.String(255), nullable=True)
     city = db.Column(db.String(255), nullable=True)
     state = db.Column(db.String(255), nullable=True)
     phone_number = db.Column(db.String(255), nullable=True)
 
     # this first function __init__ is to establish the class for python GUI
-    def __init__(self, mrn, first_name, last_name, zip_code, gender, city, state, phone_number):
+    def __init__(self, mrn, first_name, last_name, zip_code, gender, dob, city, state, phone_number):
         self.mrn = mrn
         self.first_name = first_name
         self.last_name = last_name
         self.zip_code = zip_code
         self.gender = gender
+        self.dob = dob
         self.city = city 
         self.state = state
         self.phone_number = phone_number
@@ -92,6 +94,7 @@ class Patients(db.Model):
             'last_name': self.last_name,
             'zip_code': self.zip_code,
             'gender': self.gender,
+            'dob':self.dob,
             'city': self.city,
             'state': self.state,
             'phone_number': self.phone_number
@@ -436,6 +439,7 @@ def update(): # note this function needs to match name in html form action
         patient.first_name = request.form.get('first_name')
         patient.last_name = request.form.get('last_name')
         patient.gender = request.form.get('gender')
+        patient.dob = request.form.get('dob')
         patient.zip_code = request.form.get('zip_code')
         patient.city = request.form.get('city')
         patient.state = request.form.get('state')
