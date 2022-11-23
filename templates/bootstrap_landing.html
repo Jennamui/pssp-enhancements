@@ -1,15 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>Signin Template · Bootstrap v5.2</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"> 
-<!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <title>Cover Template · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+
+    
+
+    
+
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"> 
 
     <style>
       .bd-placeholder-img {
@@ -28,7 +33,7 @@
 
       .b-example-divider {
         height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
+        background-color: rgba(146, 182, 225, 0.938);
         border: solid rgba(0, 0, 0, .15);
         border-width: 1px 0;
         box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
@@ -66,42 +71,39 @@
 
     
     <!-- Custom styles for this template -->
-    <!-- <link href="signin.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='signin.css') }}"> 
-
+    <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="d-flex h-100 text-center text-bg-dark">
     
-<main class="form-signin w-100 m-auto">
-
-  <form action="{{ url_for('register') }}" method="post">
-    <h1 class="h3 mb-3 fw-normal">Register Account</h1>
-
-    <!-- create new input with drop down selection for account type -->
-    <div class="form-floating">
-      <select class="form-select" id="account_type" name="account_type">
-        <option value="admin">Admin</option>
-        <option value="patient">Patient</option>
-        <option value="care provider">Care Provider</option>
-      </select>
-      <label for="floatingSelect">User Type</label>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Patient Portal</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="/register">Register</a>
+      </nav>
     </div>
+  </header>
 
-    <br />
+  <main class="px-3">
+    <h1>Patient Portal</h1>
+    <p class="lead">Welcome to the Patient Portal!</p>
+    <p class="lead">
+      <a href="/login" class="btn btn-lg btn-secondary fw-bold border-black bg-black">Login</a>
+    </p>
 
 
-    <br />
+  </main>
+
+
+
+  <footer class="mt-auto text-white-50">
+    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+
+</footer>
+</div>
+
+
     
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit" value="Proceed">Proceed</button>
-    </div>
-
-
-  </form>
-
-
-
-
-</main>
   </body>
 </html>
